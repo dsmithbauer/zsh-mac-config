@@ -47,7 +47,7 @@ alias k='kubectl'
 complete -F __start_kubectl k
 
 # Advanced auto-completion
-# autoload -Uz compinit && compinit 
+# autoload -Uz compinit && compinit
 
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
