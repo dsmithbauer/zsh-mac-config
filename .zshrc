@@ -57,3 +57,5 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+export HOMEBREW_NO_AUTO_UPDATE=1
