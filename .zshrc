@@ -5,6 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # From - https://kubernetes.io/docs/tasks/tools/install-kubectl/
 # From - https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories
 # May need to run: compaudit | xargs chmod g-w
@@ -38,24 +43,23 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 
 setopt AUTO_CD
-setopt CORRECT
-setopt CORRECT_ALL
+#setopt CORRECT
+#setopt CORRECT_ALL
 
 alias ll='ls -lGart'
 alias ls='ls -G'
 alias k='kubectl'
-complete -F __start_kubectl k
+#complete -F __start_kubectl k
+alias python=$(which python3)
+
+export HOMEBREW_NO_AUTO_UPDATE=1
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Advanced auto-completion
 # autoload -Uz compinit && compinit
 
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/smithbaud/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
-
-export HOMEBREW_NO_AUTO_UPDATE=1
+export PATH=$PATH:"/Users/smithbaud/bin"
